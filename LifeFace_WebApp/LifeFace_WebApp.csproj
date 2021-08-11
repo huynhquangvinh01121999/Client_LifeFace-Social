@@ -4,4 +4,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\js\angulars\HomeController.js" />
+    <Content Remove="wwwroot\js\angulars\rootController.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\angulars\Controllers\HomeController.js" />
+    <None Include="wwwroot\js\angulars\Controllers\rootController.js" />
+    <None Include="wwwroot\js\toastr\toastr.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
 </Project>

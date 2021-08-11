@@ -1,8 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Life Face";
 }
+<script src="~/js/angulars/Controllers/HomeController.js"></script>
 
-<section>
+<section ng-controller="HomeController" ng-init="LoadInit()">
     <div class="gap gray-bg">
         <div class="container-fluid">
             <div class="row">
@@ -11,56 +12,52 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget">
-                                    <h4 class="widget-title">Shortcuts</h4>
+                                    <h4 class="widget-title">Lối tắt của bạn</h4>
                                     <ul class="naves">
                                         <li>
                                             <i class="ti-clipboard"></i>
-                                            <a href="newsfeed.html" title="">News feed</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-mouse-alt"></i>
-                                            <a href="inbox.html" title="">Inbox</a>
+                                            <a href="newsfeed.html" title="">Tin mới</a>
                                         </li>
                                         <li>
                                             <i class="ti-files"></i>
-                                            <a href="fav-page.html" title="">My pages</a>
+                                            <a href="fav-page.html" title="">Trang của bạn</a>
                                         </li>
                                         <li>
                                             <i class="ti-user"></i>
-                                            <a href="timeline-friends.html" title="">friends</a>
+                                            <a href="timeline-friends.html" title="">Bạn bè</a>
                                         </li>
                                         <li>
                                             <i class="ti-image"></i>
-                                            <a href="timeline-photos.html" title="">images</a>
+                                            <a href="timeline-photos.html" title="">Hình ảnh</a>
                                         </li>
                                         <li>
                                             <i class="ti-video-camera"></i>
-                                            <a href="timeline-videos.html" title="">videos</a>
+                                            <a href="timeline-videos.html" title="">Video</a>
                                         </li>
                                         <li>
                                             <i class="ti-comments-smiley"></i>
-                                            <a href="messages.html" title="">Messages</a>
+                                            <a href="messages.html" title="">Tin nhắn</a>
                                         </li>
                                         <li>
                                             <i class="ti-bell"></i>
-                                            <a href="notifications.html" title="">Notifications</a>
+                                            <a href="notifications.html" title="">Thông báo</a>
                                         </li>
                                         <li>
                                             <i class="ti-share"></i>
-                                            <a href="people-nearby.html" title="">People Nearby</a>
+                                            <a href="people-nearby.html" title="">Bạn bè gần bạn</a>
                                         </li>
                                         <li>
                                             <i class="fa fa-bar-chart-o"></i>
-                                            <a href="insights.html" title="">insights</a>
+                                            <a href="insights.html" title="">Trình quản lý</a>
                                         </li>
                                         <li>
                                             <i class="ti-power-off"></i>
-                                            <a href="landing.html" title="">Logout</a>
+                                            <a href="landing.html" title="">Đăng xuất</a>
                                         </li>
                                     </ul>
                                 </div><!-- Shortcuts -->
                                 <div class="widget stick-widget">
-                                    <h4 class="widget-title">Who's follownig</h4>
+                                    <h4 class="widget-title">Những người bạn có thể biết</h4>
                                     <ul class="followers">
                                         <li>
                                             <figure>
@@ -119,7 +116,7 @@
                                     </figure>
                                     <div class="newpst-input">
                                         <form method="post">
-                                            <textarea rows="2" placeholder="write something"></textarea>
+                                            <textarea rows="2" placeholder="Bạn đang nghĩ gì thế?"></textarea>
                                             <div class="attachments">
                                                 <ul>
                                                     <li>
@@ -147,7 +144,7 @@
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <button type="submit">Post</button>
+                                                        <button type="submit" ng-click="click()">Đăng</button>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -300,7 +297,7 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget friend-list stick-widget">
-                                    <h4 class="widget-title">Friends</h4>
+                                    <h4 class="widget-title">Người liên hệ</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
                                         <li>
@@ -310,11 +307,6 @@
                                             </figure>
                                             <div class="friendz-meta">
                                                 <a href="time-line.html">bucky barnes</a>
-                                                <i>
-                                                    <a href="https://wpkixx.com/cdn-cgi/l/email-protection"
-                                                       class="__cf_email__"
-                                                       data-cfemail="13647a7d677661607c7f77766153747e727a7f3d707c7e">[email&#160;protected]</a>
-                                                </i>
                                             </div>
                                         </li>
                                     </ul>

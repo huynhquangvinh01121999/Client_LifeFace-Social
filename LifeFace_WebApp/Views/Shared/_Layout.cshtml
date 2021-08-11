@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 
+    @* Import CSS *@
     <link rel="stylesheet" href="~/css/main.min.css">
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/color.css">
     <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/sweetalert.css">
+    <link rel="stylesheet" href="~/js/toastr/toastr.min.css" />
+
+    @* Import JS Library *@
+    <script src="~/js/angulars/angular.min.js"></script>
+    <script src="~/js/imports/sweetalert.js"></script>
+    <script src="~/js/angulars/Controllers/rootController.js"></script>
 </head>
-<body>
+<body ng-app="myApp">
     <div class="theme-layout">
         <div class="topbar stick">
             <div class="logo">
@@ -332,12 +340,11 @@
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <script src="~/js/main.min.js"></script>
-    <script src="~/js/script.js"></script>
-    <script src="~/js/map-init.js"></script>
-    <script src="~/js/angulars/angular.min.js"></script>
+    <script src="~/js/imports/site.js" asp-append-version="true"></script>
+    <script src="~/js/imports/main.min.js"></script>
+    <script src="~/js/imports/script.js"></script>
+    <script src="~/js/toastr/toastr.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
