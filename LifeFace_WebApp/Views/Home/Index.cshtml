@@ -1,0 +1,329 @@
+﻿@{
+    ViewData["Title"] = "Life Face";
+}
+
+<section>
+    <div class="gap gray-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="page-contents">
+                        <div class="col-lg-3">
+                            <aside class="sidebar static">
+                                <div class="widget">
+                                    <h4 class="widget-title">Shortcuts</h4>
+                                    <ul class="naves">
+                                        <li>
+                                            <i class="ti-clipboard"></i>
+                                            <a href="newsfeed.html" title="">News feed</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-mouse-alt"></i>
+                                            <a href="inbox.html" title="">Inbox</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-files"></i>
+                                            <a href="fav-page.html" title="">My pages</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-user"></i>
+                                            <a href="timeline-friends.html" title="">friends</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-image"></i>
+                                            <a href="timeline-photos.html" title="">images</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-video-camera"></i>
+                                            <a href="timeline-videos.html" title="">videos</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-comments-smiley"></i>
+                                            <a href="messages.html" title="">Messages</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-bell"></i>
+                                            <a href="notifications.html" title="">Notifications</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-share"></i>
+                                            <a href="people-nearby.html" title="">People Nearby</a>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bar-chart-o"></i>
+                                            <a href="insights.html" title="">insights</a>
+                                        </li>
+                                        <li>
+                                            <i class="ti-power-off"></i>
+                                            <a href="landing.html" title="">Logout</a>
+                                        </li>
+                                    </ul>
+                                </div><!-- Shortcuts -->
+                                <div class="widget stick-widget">
+                                    <h4 class="widget-title">Who's follownig</h4>
+                                    <ul class="followers">
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar2.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-meta">
+                                                <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
+                                                <a href="#" title="" class="underline">Add Friend</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar4.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-meta">
+                                                <h4><a href="time-line.html" title="">Issabel</a></h4>
+                                                <a href="#" title="" class="underline">Add Friend</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar6.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-meta">
+                                                <h4><a href="time-line.html" title="">Andrew</a></h4>
+                                                <a href="#" title="" class="underline">Add Friend</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar8.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-meta">
+                                                <h4><a href="time-line.html" title="">Sophia</a></h4>
+                                                <a href="#" title="" class="underline">Add Friend</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar3.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-meta">
+                                                <h4><a href="time-line.html" title="">Allen</a></h4>
+                                                <a href="#" title="" class="underline">Add Friend</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div><!-- who's following -->
+                            </aside>
+                        </div><!-- sidebar -->
+                        <div class="col-lg-6">
+                            <div class="central-meta">
+                                <div class="new-postbox">
+                                    <figure>
+                                        <img src="images/resources/admin2.jpg" alt="">
+                                    </figure>
+                                    <div class="newpst-input">
+                                        <form method="post">
+                                            <textarea rows="2" placeholder="write something"></textarea>
+                                            <div class="attachments">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fa fa-music"></i>
+                                                        <label class="fileContainer">
+                                                            <input type="file">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-image"></i>
+                                                        <label class="fileContainer">
+                                                            <input type="file">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-video-camera"></i>
+                                                        <label class="fileContainer">
+                                                            <input type="file">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-camera"></i>
+                                                        <label class="fileContainer">
+                                                            <input type="file">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <button type="submit">Post</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div><!-- add post new box -->
+                            <div class="loadMore">
+                                <div class="central-meta item">
+                                    <div class="user-post">
+                                        <div class="friend-info">
+                                            <figure>
+                                                <img src="images/resources/friend-avatar10.jpg" alt="">
+                                            </figure>
+                                            <div class="friend-name">
+                                                <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
+                                                <span>June,2 2018 19:PM</span>
+                                            </div>
+                                            <div class="post-meta">
+                                                <div class="description">
+                                                    <p>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                        elit. Repudiandae illo esse quis quod nihil. Quisquam
+                                                        porro adipisci consectetur quidem maiores. Doloribus
+                                                        labore quae atque illo molestiae veniam provident dolore
+                                                        amet.
+                                                    </p>
+                                                </div>
+                                                <img src="images/resources/user-post.jpg" alt="">
+                                                <div class="we-video-info">
+                                                    <ul>
+                                                        <li>
+                                                            <span class="like" data-toggle="tooltip"
+                                                                  title="like">
+                                                                <i class="ti-heart"></i>
+                                                                <ins>2.2k</ins>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="comment" data-toggle="tooltip"
+                                                                  title="Comments">
+                                                                <i class="fa fa-comments-o"></i>
+                                                                <ins>52</ins>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="comment" data-toggle="tooltip"
+                                                                  title="Comments">
+                                                                <i class="fa fa-share-alt"></i>
+                                                                <ins>2</ins>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="coment-area">
+                                            <ul class="we-comet">
+                                                <li>
+                                                    <div class="comet-avatar">
+                                                        <img src="images/resources/comet-1.jpg" alt="">
+                                                    </div>
+                                                    <div class="we-comment">
+                                                        <div class="coment-head">
+                                                            <h5>
+                                                                <a href="time-line.html" title="">
+                                                                    Jason
+                                                                    borne
+                                                                </a>
+                                                            </h5>
+                                                            <span>1 year ago</span>
+                                                            <a class="we-reply" href="#" title="Reply">
+                                                                <i class="fa fa-reply"></i>
+                                                            </a>
+                                                        </div>
+                                                        <p>
+                                                            we are working for the dance and sing songs. this car
+                                                            is very awesome for the youngster. please vote this
+                                                            car and like our post
+                                                        </p>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="images/resources/comet-2.jpg" alt="">
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5>
+                                                                        <a href="time-line.html"
+                                                                           title="">alexendra dadrio</a>
+                                                                    </h5>
+                                                                    <span>1 month ago</span>
+                                                                    <a class="we-reply" href="#"
+                                                                       title="Reply">
+                                                                        <i class="fa fa-reply"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <p>
+                                                                    yes, really very awesome car i see the
+                                                                    features of this car in the official website
+                                                                    of <a href="#" title="">#Mercedes-Benz</a>
+                                                                    and really impressed :-)
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" title="" class="showmore underline">
+                                                        more
+                                                        comments
+                                                    </a>
+                                                </li>
+                                                <li class="post-comment">
+                                                    <div class="comet-avatar">
+                                                        <img src="images/resources/comet-1.jpg" alt="">
+                                                    </div>
+                                                    <div class="post-comt-box">
+                                                        <form method="post">
+                                                            <textarea placeholder="Post your comment"></textarea>
+                                                            <div class="add-smiles">
+                                                                <span class="em em-smiley"
+                                                                      title="add icon"></span>
+                                                            </div>
+                                                            <div class="smiles-bunch">
+                                                                <i class="em em---1"></i>
+                                                                <i class="em em-smiley"></i>
+                                                                <i class="em em-anguished"></i>
+                                                                <i class="em em-laughing"></i>
+                                                                <i class="em em-angry"></i>
+                                                                <i class="em em-astonished"></i>
+                                                                <i class="em em-blush"></i>
+                                                                <i class="em em-disappointed"></i>
+                                                                <i class="em em-worried"></i>
+                                                                <i class="em em-kissing_heart"></i>
+                                                                <i class="em em-rage"></i>
+                                                                <i class="em em-stuck_out_tongue"></i>
+                                                            </div>
+                                                            <button type="submit"></button>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- centerl meta -->
+                        <div class="col-lg-3">
+                            <aside class="sidebar static">
+                                <div class="widget friend-list stick-widget">
+                                    <h4 class="widget-title">Friends</h4>
+                                    <div id="searchDir"></div>
+                                    <ul id="people-list" class="friendz-list">
+                                        <li>
+                                            <figure>
+                                                <img src="images/resources/friend-avatar.jpg" alt="">
+                                                <span class="status f-online"></span>
+                                            </figure>
+                                            <div class="friendz-meta">
+                                                <a href="time-line.html">bucky barnes</a>
+                                                <i>
+                                                    <a href="https://wpkixx.com/cdn-cgi/l/email-protection"
+                                                       class="__cf_email__"
+                                                       data-cfemail="13647a7d677661607c7f77766153747e727a7f3d707c7e">[email&#160;protected]</a>
+                                                </i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div><!-- friends list sidebar -->
+                            </aside>
+                        </div><!-- sidebar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
