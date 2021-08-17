@@ -1,19 +1,20 @@
 ﻿@{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
-
-<form>
+<script src="~/js/angulars/Pages/LoginController.js"></script>
+<form ng-controller="LoginController" id="frmLogin">
     <img class="mb-4" src="~/images/logo.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Đăng nhập</h1>
-    <label for="inputEmail" class="sr-only">Địa chỉ Email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Địa chỉ Email" required autofocus>
+    <label for="inputEmail" class="sr-only">Tên đăng nhập</label>
+    <input type="email" id="inputUserName" class="form-control" placeholder="Tên đăng nhập" required autofocus>
     <label for="inputPassword" class="sr-only">Mật khẩu</label>
-    <input type="password" id="inputPassword" class="form-control mt-2" placeholder="Mật khẩu" required>
-    <div class="checkbox mb-3">
+    <input type="password" id="inputPassWord" class="form-control mt-2" placeholder="Mật khẩu" required>
+    <div class="checkbox mb-3" style="text-align:right;">
         <label>
             <input type="checkbox" value="remember-me"> Nhớ mật khẩu
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <a class="btn btn-lg btn-success btn-block mt-2" ng-click="login()">Đăng nhập</a>
+    <a class="btn btn-lg btn-primary btn-block mt-2" asp-action="Register" asp-controller="Auth">Đăng ký</a>
     <p class="mt-5 mb-3 text-muted">&copy; 2021 Design by Huynh Quang Vinh</p>
 </form>

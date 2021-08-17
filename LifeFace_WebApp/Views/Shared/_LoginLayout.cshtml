@@ -13,10 +13,17 @@
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="~/css/signin.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/signin.css">
+    <link rel="stylesheet" href="~/css/sweetalert.css">
+    <link rel="stylesheet" href="~/js/toastr/toastr.min.css" />
+
+    @* Import JS Library *@
+    <script src="~/js/angulars/angular.min.js"></script>
+    <script src="~/js/imports/sweetalert.js"></script>
+    <script src="~/js/angulars/Pages/rootController.js"></script>
 </head>
 
-<body class="text-center">
+<body class="text-center" ng-app="myApp">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-lg-4 col-sm-3">
@@ -28,7 +35,14 @@
             </div>
         </div>
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/imports/site.js" asp-append-version="true"></script>
+    <script src="~/js/imports/main.min.js"></script>
+    <script src="~/js/imports/script.js"></script>
+    <script src="~/js/toastr/toastr.min.js"></script>
+
     <marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
-    <p class="mt-5 mb-3 text-muted">&copy; 2021 Design by Huynh Quang Vinh</p>
 </body>
 </html>

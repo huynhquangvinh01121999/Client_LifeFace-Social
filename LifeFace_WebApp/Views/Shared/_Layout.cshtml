@@ -19,7 +19,7 @@
     @* Import JS Library *@
     <script src="~/js/angulars/angular.min.js"></script>
     <script src="~/js/imports/sweetalert.js"></script>
-    <script src="~/js/angulars/Controllers/rootController.js"></script>
+    <script src="~/js/angulars/Pages/rootController.js"></script>
 </head>
 <body ng-app="myApp">
     <div class="theme-layout">
@@ -212,9 +212,10 @@
                         </div>
                     </li>
                 </ul>
-                <div class="user-img" style="margin-right:40px;">
+                <div class="user-img" style="margin-right:20px;">
                     <img src="images/resources/admin.jpg" alt="" style="width:60px;height:60px">
-                    <span class="status f-online"></span>
+                    @*<span class="status f-online"></span>*@
+                    <span>Vinh</span>
                     <div class="user-setting">
                         <a href="#" title=""><i class="ti-user"></i> view profile</a>
                         <a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
@@ -345,6 +346,9 @@
     <script src="~/js/imports/main.min.js"></script>
     <script src="~/js/imports/script.js"></script>
     <script src="~/js/toastr/toastr.min.js"></script>
+
     @RenderSection("Scripts", required: false)
+
+    <marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
 </body>
 </html>

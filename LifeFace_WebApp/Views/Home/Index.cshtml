@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Life Face";
 }
-<script src="~/js/angulars/Controllers/HomeController.js"></script>
+<script src="~/js/angulars/Pages/HomeController.js"></script>
 
 <section ng-controller="HomeController" ng-init="LoadInit()">
     <div class="gap gray-bg">
@@ -65,7 +65,7 @@
                                             </figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                <a href="#" title="" class="underline">Thêm bạn bè</a>
                                             </div>
                                         </li>
                                         <li>
@@ -74,7 +74,7 @@
                                             </figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Issabel</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                <a href="#" title="" class="underline">Thêm bạn bè</a>
                                             </div>
                                         </li>
                                         <li>
@@ -83,7 +83,7 @@
                                             </figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Andrew</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                <a href="#" title="" class="underline">Thêm bạn bè</a>
                                             </div>
                                         </li>
                                         <li>
@@ -92,7 +92,7 @@
                                             </figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Sophia</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                <a href="#" title="" class="underline">Thêm bạn bè</a>
                                             </div>
                                         </li>
                                         <li>
@@ -101,7 +101,7 @@
                                             </figure>
                                             <div class="friend-meta">
                                                 <h4><a href="time-line.html" title="">Allen</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                                <a href="#" title="" class="underline">Thêm bạn bè</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -115,9 +115,12 @@
                                         <img src="images/resources/admin2.jpg" alt="">
                                     </figure>
                                     <div class="newpst-input">
-                                        <form method="post">
-                                            <textarea rows="2" placeholder="Bạn đang nghĩ gì thế?"></textarea>
-                                            <div class="attachments">
+
+                                        <form method="post" style="border: 0.2px solid #eee; border-radius: 10px;">
+                                            <textarea rows="2" placeholder="Bạn đang nghĩ gì thế?" style="outline:none;border:none;">
+                                            </textarea>
+                                            <img ng-src="{{image}}" ng-show="image" style="width:100%" />
+                                            <div class="attachments" style="border:none;border-radius:10px;">
                                                 <ul>
                                                     <li>
                                                         <i class="fa fa-music"></i>
@@ -140,11 +143,12 @@
                                                     <li>
                                                         <i class="fa fa-camera"></i>
                                                         <label class="fileContainer">
-                                                            <input type="file">
+                                                            @*<input type="file" id="imageFile">*@
+                                                            <input id="imageFile" type="file" img-upload ng-model="imageName" name="imageName">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <button type="submit" ng-click="click()">Đăng</button>
+                                                        <button type="submit" ng-click="load()">Đăng</button>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -153,11 +157,11 @@
                                 </div>
                             </div><!-- add post new box -->
                             <div class="loadMore">
-                                <div class="central-meta item">
+                                <div class="central-meta item" ng-repeat="item in listProduct">
                                     <div class="user-post">
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="images/resources/friend-avatar10.jpg" alt="">
+                                                <img src="{{item.image}}" alt="">
                                             </figure>
                                             <div class="friend-name">
                                                 <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
@@ -173,7 +177,7 @@
                                                         amet.
                                                     </p>
                                                 </div>
-                                                <img src="images/resources/user-post.jpg" alt="">
+                                                <img src="{{item.image}}" alt="error">
                                                 <div class="we-video-info">
                                                     <ul>
                                                         <li>
