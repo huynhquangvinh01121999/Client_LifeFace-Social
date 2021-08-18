@@ -32,7 +32,7 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
     products.body = "title";
 
     $scope.getData = function () {
-        GetAsync($http, "http://localhost:3000/",[]).then(function (res) {
+        GetAsync($http, "/", []).then(function (res) {
             $scope.listProduct = res.data;
             console.log($scope.listProduct);
         }, function (err) {

@@ -1,6 +1,7 @@
-﻿function GetAsync($http, Url, Data) {
+﻿const BASE_URL = "http://localhost:3000";
+function GetAsync($http, Url, Data) {
     return $http({
-        url: Url,
+        url: BASE_URL + Url,
         dataType: 'json',
         method: "get",
         data: Data,
@@ -23,7 +24,6 @@ function PostAsync($http, Url, Data) {
         async: true
     });
 };
-
 
 function parseJwt(token) {
     var base64Url = token.split('.')[1];

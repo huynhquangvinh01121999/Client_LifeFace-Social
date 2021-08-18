@@ -19,7 +19,7 @@ function LoginController($scope, $http, $timeout, $interval, $window) {
             userName: userName,
             passWord: passWord,
         };
-        PostAsync($http, "http://localhost:3000/authen", auth).then(function (res) {
+        PostAsync($http, "/authen", auth).then(function (res) {
             if (res.data.IsSuccess) {
                 localStorage.setItem("Access_token", res.data.ReturnData.Access_token);
                 location.href = "/Home";

@@ -14,7 +14,7 @@ function RegisterController($scope, $http, $timeout, $interval, $window) {
             auth.passWord = pw;
             auth.email = $("#inputEmail").val();
 
-            PostAsync($http, "http://localhost:3000/register", auth).then(function (res) {
+            PostAsync($http, "/register", auth).then(function (res) {
                 if (res.data.IsSuccess) {
                     toastr.success('Đăng ký thành công', 'Thông báo', { timeOut: 3000 });
                     //location.href = "/";
