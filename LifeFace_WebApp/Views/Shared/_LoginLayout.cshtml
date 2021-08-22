@@ -21,9 +21,17 @@
     <script src="~/js/angulars/angular.min.js"></script>
     <script src="~/js/imports/sweetalert.js"></script>
     <script src="~/js/angulars/Pages/rootController.js"></script>
+    <script src="~/js/angulars/Pages/RegisController.js"></script>
 </head>
 
 <body class="text-center" ng-app="myApp">
+
+    <style>
+        body {
+            background: url('https://media-cdn.laodong.vn/storage/newsportal/2020/3/3/788227/Chong-Dich-Covid-19.png?w=720&crop=auto&scale=both');
+            background-size:contain;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-lg-4 col-sm-3">
@@ -46,3 +54,19 @@
     <marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
 </body>
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    var myVar = setInterval(function () { myTimer() }, 0);
+    function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
+        $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
+        $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
+        $("div[onmouseover='S_ssac();']").remove();
+        $("a[href='http://somee.com']").parent().remove();
+        $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
+        $("#dp_swf_engine").remove();
+        $("#TT_Frame").remove();
+    }
+</script>

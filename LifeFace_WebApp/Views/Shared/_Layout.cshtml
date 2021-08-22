@@ -25,7 +25,7 @@
     <div class="theme-layout">
         <div class="topbar stick">
             <div class="logo">
-                <a style="margin-top:-10px" title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
+                <a style="margin-top:-10px" title="" href="newsfeed.html"><img src="images/logo_lifeface.png" alt=""></a>
             </div>
 
             <div class="top-area">
@@ -80,7 +80,7 @@
                 <ul class="setting-area">
                     <li>
                         <a href="#" title="Notification" data-ripple="">
-                            <i class="ti-bell" style="font-size: 22px;"></i><span>20</span>
+                            <i class="ti-bell" style="font-size: 22px;"></i><span>0</span>
                         </a>
                         <div class="dropdowns">
                             <span>4 New Notifications</span>
@@ -147,7 +147,7 @@
                     <li>
                         <a href="#" title="Messages" data-ripple="">
                             <i class="ti-comment"
-                               style="font-size: 22px;"></i><span>12</span>
+                               style="font-size: 22px;"></i><span>0</span>
                         </a>
                         <div class="dropdowns">
                             <span>5 New Messages</span>
@@ -212,16 +212,18 @@
                         </div>
                     </li>
                 </ul>
-                <div class="user-img" style="margin-right:20px;">
-                    <img src="images/resources/admin.jpg" alt="" style="width:60px;height:60px">
+
+                @*<script src="~/js/angulars/Pages/commonController.js"></script>*@
+                <div class="user-img" style="margin-right:20px;" ng-controller="HomeController">
+                    <img src="{{userInfo.ImageBase}}" alt="" style="width:60px;height:60px">
                     @*<span class="status f-online"></span>*@
-                    <span>Vinh</span>
+                    <span>{{userInfo.LastName}}</span>
                     <div class="user-setting">
-                        <a href="#" title=""><i class="ti-user"></i> view profile</a>
-                        <a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
-                        <a href="#" title=""><i class="ti-target"></i>activity log</a>
-                        <a href="#" title=""><i class="ti-settings"></i>account setting</a>
-                        <a href="#" title=""><i class="ti-power-off"></i>log out</a>
+                        <a href="#" title=""><i class="ti-user"></i>Trang cá nhân</a>
+                        @*<a href="#" title=""><i class="ti-pencil-alt"></i>Chỉnh sửa cá nhân</a>
+                            <a href="#" title=""><i class="ti-target"></i>Họat động</a>*@
+                        <a href="#" title=""><i class="ti-settings"></i>Cài đặt</a>
+                        <a href="#" ng-click="logout()" title=""><i class="ti-power-off"></i>Đăng xuất</a>
                     </div>
                 </div>
             </div>
@@ -235,21 +237,20 @@
                         <div class="widget">
                             <div class="foot-logo">
                                 <div class="logo">
-                                    <a href="index-2.html" title=""><img src="images/logo.png" alt=""></a>
+                                    <a href="index-2.html" title=""><img src="images/logo_lifeface.png" alt=""></a>
                                 </div>
                                 <p>
-                                    The trio took this simple idea and built it into the world’s leading carpooling
-                                    platform.
+                                    Tôi làm ra một ứng dụng mạng xã hội này với mục đích phục vụ nhu cầu giải trí cho mọi người trong thời buổi hiện đại ngày nay
                                 </p>
                             </div>
                             <ul class="location">
                                 <li>
                                     <i class="ti-map-alt"></i>
-                                    <p>33 new montgomery st.750 san francisco, CA USA 94105.</p>
+                                    <p>Tôi sinh ra tại TP.Hồ Chí Minh</p>
                                 </li>
                                 <li>
                                     <i class="ti-mobile"></i>
-                                    <p>+1-56-346 345</p>
+                                    <p>Hãy gọi 115 nếu bạn khó thở</p>
                                 </li>
                             </ul>
                         </div>
@@ -257,16 +258,12 @@
                     <div class="col-lg-2 col-md-4">
                         <div class="widget">
                             <div class="widget-title">
-                                <h4>follow</h4>
+                                <h4>Theo dõi</h4>
                             </div>
                             <ul class="list-style">
                                 <li>
                                     <i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/"
                                                                              title="">facebook</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en"
-                                                                           title="">twitter</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en"
@@ -276,45 +273,37 @@
                                     <i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover"
                                                                                 title="">Google+</a>
                                 </li>
-                                <li>
-                                    <i class="fa fa-pinterest-square"></i> <a href="https://www.pinterest.com/"
-                                                                              title="">Pintrest</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <div class="widget">
                             <div class="widget-title">
-                                <h4>Navigate</h4>
+                                <h4>Điều hướng</h4>
                             </div>
                             <ul class="list-style">
-                                <li><a href="about.html" title="">about us</a></li>
-                                <li><a href="contact.html" title="">contact us</a></li>
-                                <li><a href="terms.html" title="">terms & Conditions</a></li>
-                                <li><a href="#" title="">RSS syndication</a></li>
-                                <li><a href="sitemap.html" title="">Sitemap</a></li>
+                                <li><a href="about.html" title="">Về chúng tôi</a></li>
+                                <li><a href="contact.html" title="">Liên hệ</a></li>
+                                <li><a href="terms.html" title="">Điều khoản và điều kiện</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <div class="widget">
                             <div class="widget-title">
-                                <h4>useful links</h4>
+                                <h4>Đường dẫn</h4>
                             </div>
                             <ul class="list-style">
-                                <li><a href="#" title="">leasing</a></li>
-                                <li><a href="#" title="">submit route</a></li>
-                                <li><a href="#" title="">how does it work?</a></li>
-                                <li><a href="#" title="">agent listings</a></li>
-                                <li><a href="#" title="">view All</a></li>
+                                <li><a href="#" title="">Đăng ký</a></li>
+                                <li><a href="#" title="">Bạn muốn liên kết</a></li>
+                                <li><a href="#" title="">Xem tất cả</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <div class="widget">
                             <div class="widget-title">
-                                <h4>download apps</h4>
+                                <h4>Tải xuống</h4>
                             </div>
                             <ul class="colla-apps">
                                 <li>
@@ -338,6 +327,8 @@
                 </div>
             </div>
         </footer><!-- footer -->
+
+        <div class="loader" id="loader"></div>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -352,3 +343,19 @@
     <marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
 </body>
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    var myVar = setInterval(function () { myTimer() }, 0);
+    function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
+        $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
+        $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
+        $("div[onmouseover='S_ssac();']").remove();
+        $("a[href='http://somee.com']").parent().remove();
+        $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
+        $("#dp_swf_engine").remove();
+        $("#TT_Frame").remove();
+    }
+</script>

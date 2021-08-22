@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\angulars\Pages\RegisterController.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\js\angulars\Pages\RegisterController.js" />
     <None Include="wwwroot\js\angulars\Pages\HomeController.js" />
     <None Include="wwwroot\js\angulars\Pages\rootController.js" />
     <None Include="wwwroot\js\toastr\toastr.min.js" />
@@ -23,5 +18,7 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\" />
+    <Folder Include="wwwroot\js\angulars\Pages\NewFolder1\" />
+    <Folder Include="wwwroot\js\angulars\Pages\NewFolder\" />
   </ItemGroup>
 </Project>

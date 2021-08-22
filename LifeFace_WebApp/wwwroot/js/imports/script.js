@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+﻿jQuery(document).ready(function($) {
 	
 	"use strict";
 	
@@ -65,7 +65,7 @@ $('.notification-box > ul li > i.del').on("click", function(){
 
 	function listFilter(searchDir, list) { 
 	  var form = $("<form>").attr({"class":"filterform","action":"#"}),
-	  input = $("<input>").attr({"class":"filterinput","type":"text","placeholder":"Search Contacts..."});
+	  input = $("<input>").attr({"class":"filterinput","type":"text","placeholder":"Tìm kiếm liên hệ..."});
 	  $(form).append(input).appendTo(searchDir);
 
 	  $(input)
@@ -146,17 +146,18 @@ if ($.isFunction($.fn.userincr)) {
 		buttonlabels:{'dec':'-','inc':'+'},
 	}).data({'min':0,'max':20,'step':1});
 }	
-	
-if ($.isFunction($.fn.loadMoreResults)) {	
-	$('.loadMore').loadMoreResults({
-		displayedItems: 3,
-		showItems: 1,
-		button: {
-		  'class': 'btn-load-more',
-		  'text': 'Load More'
-		}
-	});	
-}
+	// ====================================== load more ==========================================
+	// ===========================================================================================
+//if ($.isFunction($.fn.loadMoreResults)) {	
+//	$('.loadMore').loadMoreResults({
+//		displayedItems: 3,
+//		showItems: 1,
+//		button: {
+//		  'class': 'btn-load-more',
+//		  'text': 'Load More'
+//		}
+//	});	
+//}
 	//===== owl carousel  =====//
 	if ($.isFunction($.fn.owlCarousel)) {
 		$('.sponsor-logo').owlCarousel({

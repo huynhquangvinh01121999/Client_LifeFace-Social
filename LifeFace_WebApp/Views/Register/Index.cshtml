@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<script src="~/js/angulars/Pages/RegisController.js"></script>
+<style>
+    .label_title {
+        text-align: left;
+        font-size: 13px;
+        color: #495057;
+        margin-top: 12px;
+    }
+</style>
+<form id="frmRegister" style="margin-top:310px;" ng-controller="RegisterController">
+    <img class="mb-4 mt-5" src="~/images/logo_lifeface_login.png" alt="">
+    <h1 class="h3 mb-3 font-weight-normal">Đăng kí tài khoản</h1>
+    <h3 style="text-align: left; font-size: 1rem; color: #495057;">Thông tin cá nhân</h3>
+
+    <h3 class="label_title">Họ của bạn</h3>
+    <input type="text" id="inputFirstName" class="form-control" placeholder="Họ của bạn" required autofocus>
+
+    <h3 class="label_title">Tên lót của bạn</h3>
+    <input type="text" id="inputMiddleName" class="form-control" placeholder="Tên lót của bạn" required>
+
+    <h3 class="label_title">Tên của bạn</h3>
+    <input type="text" id="inputLastName" class="form-control" placeholder="Tên của bạn" required>
+
+    <h3 style="text-align: left; font-size: 13px; color: #495057; margin-top: 15px;">Ngày sinh của bạn</h3>
+    <input type="date" id="inputDob" class="form-control" placeholder="Ngày sinh của bạn" required>
+
+    <h3 style="text-align: left; font-size: 1rem; color: #495057;margin-top:20px;">Thông tin tài khoản</h3>
+
+    <h3 class="label_title">Tên đăng nhập</h3>
+    <input type="text" id="inputUserName" class="form-control" placeholder="Tên đăng nhập" required>
+
+    <h3 class="label_title">Mật khẩu</h3>
+    <input type="password" id="inputPassWord" class="form-control" placeholder="Mật khẩu" required>
+
+    <h3 class="label_title">Nhập lại mật khẩu</h3>
+    <input type="password" id="inputRePassWord" class="form-control" placeholder="Nhập lại mật khẩu" required>
+
+    <h3 class="label_title">Địa chỉ Email</h3>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Địa chỉ Email" required>
+
+    <a class="btn btn-lg btn-primary btn-block mt-2" ng-click="register()">Đăng ký</a>
+    <a class="btn btn-lg btn-success btn-block mt-2" asp-action="Index" asp-controller="Auth">Đăng nhập</a>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021 Design by Huynh Quang Vinh</p>
+</form>
