@@ -37,7 +37,7 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
     } else {
         $scope.listPost;
         $scope.listAllPeople;
-        $scope.userInfo;
+        $scope.userInfo = "";
         $scope.listPostHeartOfUserId;
 
         toastr.options.preventDuplicates = true;
@@ -47,15 +47,17 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
         $scope.decodeToken = parseJwt(localStorage.getItem("Access_token"));
         GetAsync($http, "/getInfo?userName=" + $scope.decodeToken.username, []).then(function (res) {
             $scope.userInfo = res.data[0];
-            //console.log($scope.userInfo);
-            $("#loader").hide();
         }, function (err) {
             console.log("error");
         });
         let offSet = 0;
 
-        $scope.LoadInit = function () {
+        $scope.LoadInit = async function () {
             $scope.GetPosts();
+            //console.log(1)
+            //$scope.userInfo = await $scope.GetInfo();
+            //console.log($scope.userInfo);
+            //console.log(2)
             $scope.GetAllPeoples();
         }
 
@@ -66,12 +68,15 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
         }
 
         $scope.GetInfo = function () {
-            GetAsync($http, "/getInfo?userName=" + $scope.decodeToken.username, []).then(function (res) {
-                $scope.userInfo = res.data;
-                //console.log($scope.userInfo);
-                $("#loader").hide();
-            }, function (err) {
-                console.log("error");
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    GetAsync($http, "/getInfo?userName=" + $scope.decodeToken.username, []).then(function (res) {
+                        resolve(res.data[0]);
+                        $("#loader").hide();
+                    }, function (err) {
+                        console.log("error");
+                    });
+                }, 2000);
             });
         }
 
@@ -201,11 +206,6 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
             }, function (err) { })
         }
 
-        $scope.logout = () => {
-            localStorage.removeItem("Access_token");
-            location.href = "/Auth";
-        }
-
         // show modal comment
         $scope.CommentHanleArr = [];    // mảng dùng để xử lý tắt mở vùng comment
 
@@ -300,7 +300,7 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
             }
         }
 
-        $scope.PostComment = (keyEvent, post) => {
+        $scope.PostComment = (post) => {
             SendComment(post);
         }
     }

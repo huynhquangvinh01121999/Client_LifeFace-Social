@@ -1,0 +1,300 @@
+﻿@{
+    ViewData["Title"] = "Trang cá nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/angulars/Pages/ProfileController.js"></script>
+<script src="~/js/angulars/Pages/commonController.js"></script>
+<link rel="stylesheet" href="~/css/loader.css">
+
+<div ng-controller="ProfileController" ng-init="LoadList()">
+    <section>
+        <div class="feature-photo">
+            <figure>
+                <img src="{{profileInfo.BackgroundBase}}" alt="Chưa có ảnh nền" style="height:395px" />
+            </figure>
+            <div class="add-btn">
+                @*<a href="#" title="" data-ripple="">Add Friend</a>*@
+            </div>
+            <form class="edit-phto">
+                <i class="fa fa-camera-retro"></i>
+                <label class="fileContainer">
+                    Đổi ảnh nền
+                    <input type="file" />
+                </label>
+            </form>
+            <div class="container-fluid">
+                <div class="row merged">
+                    <div class="col-lg-2 col-sm-3">
+                        <div class="user-avatar">
+                            <figure>
+                                <img src="{{profileInfo.ImageBase}}" alt="Chưa có ảnh đại diện" style="height:190px" />
+                                <form class="edit-phto">
+                                    <i class="fa fa-camera-retro"></i>
+                                    <label class="fileContainer">
+                                        Đổi ảnh đại diện
+                                        <input type="file" />
+                                    </label>
+                                </form>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-sm-9">
+                        <div class="timeline-info">
+                            <ul>
+                                <li class="admin-name">
+                                    <h5>{{profileInfo.FirstName}} {{profileInfo.MiddleName}} {{profileInfo.LastName}}</h5>
+                                    @*<span>(biệt danh)</span>*@
+                                </li>
+                                <li>
+                                    <a class="active" href="#" title="" data-ripple="">Dòng thời gian</a>
+                                    <a class="" href="#" title="" data-ripple="">Ảnh</a>
+                                    <a class="" href="#" title="" data-ripple="">Videos</a>
+                                    <a class="" href="#" title="" data-ripple="">Bạn bè</a>
+                                    <a class="" href="#" title="" data-ripple="">Nhóm</a>
+                                    <a class="" href="#" title="" data-ripple="">Khác</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="gap gray-bg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row" id="page-contents">
+                            <div class="col-lg-3">
+
+                                <aside class="sidebar static">
+                                    <div class="widget">
+                                        <h4 class="widget-title">Chỉnh sửa thông tin cá nhân</h4>
+                                        <ul class="naves">
+                                            <li>
+                                                <i class="ti-info-alt"></i>
+                                                <a title="" href="#">Thông tin cơ bản</a>
+                                            </li>
+                                            <li>
+                                                <i class="ti-mouse-alt"></i>
+                                                <a title="" href="#">
+                                                    Học vấn &amp;
+                                                    Công việc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="ti-heart"></i>
+                                                <a title="" href="#">Sở thích</a>
+                                            </li>
+                                            <li>
+                                                <i class="ti-settings"></i>
+                                                <a title="" href="#">Cài đặt tài khoản</a>
+                                            </li>
+                                            <li>
+                                                <i class="ti-lock"></i>
+                                                <a title="" href="#">Đổi mật khẩu</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-lg-6">
+                                @*your post*@
+                                <div class="central-meta item" ng-repeat="item in listPost">
+                                    <div class="user-post">
+                                        <div class="friend-info">
+                                            <figure>
+                                                <img src="{{item.Avatar}}" alt="" />
+                                            </figure>
+                                            <div class="friend-name">
+                                                <ins><a href="#" title="">{{item.FullName}}</a></ins>
+                                                <span>{{item.CreateAt}}</span>
+                                            </div>
+                                            <div class="post-meta">
+                                                <div class="description">
+                                                    <p style="color: black;font-size: 15px">
+                                                        {{item.Content}}
+                                                    </p>
+                                                </div>
+                                                <div ng-repeat="image in item.ListImage">
+                                                    <img src="{{image.ImageBase}}" alt="error" style="border-radius: 10px;margin-top: -5px;" />
+                                                </div>
+                                                @*<div class="we-video-info">
+                                                    <ul>
+                                                        <li>
+                                                            <span class="like" data-toggle="tooltip"
+                                                                  title="like">
+                                                                <i class="ti-heart" id="heart_{{item.AutoId}}" ng-click="heart(item.AutoId)"></i>
+                                                                <ins id="heartCount_{{item.AutoId}}">{{item.HeartCount}}</ins>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="comment" data-toggle="tooltip"
+                                                                  title="Comments">
+                                                                <i class="fa fa-comments-o" style="cursor:pointer" ng-click="LoadCommentArea(item.AutoId)"></i>
+                                                                <ins>{{item.CommentCount}}</ins>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="comment" data-toggle="tooltip"
+                                                                  title="Comments">
+                                                                <i class="fa fa-share-alt"></i>
+                                                                <ins>0</ins>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>*@
+                                            </div>
+                                        </div>
+                                        @*<div class="coment-area" id="coment_area{{item.AutoId}}" style="display:none;">
+                                            <ul class="we-comet">
+                                                <li ng-repeat="comment in item.Comments">
+                                                    <div class="comet-avatar">
+                                                        <img src="{{comment.Avatar}}" />
+                                                    </div>
+                                                    <div class="we-comment">
+                                                        <div class="coment-head">
+                                                            <h5>
+                                                                <a href="#" title="">
+                                                                    {{comment.FullName}}
+                                                                </a>
+                                                            </h5>
+                                                            <span>{{comment.CreateAt}}</span>
+                                                            <a class="we-reply" href="#" title="Reply">
+                                                                <i class="fa fa-reply"></i>
+                                                            </a>
+                                                        </div>
+                                                        <p style="color: black;font-size: 15px">
+                                                            {{comment.Content}}
+                                                        </p>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="images/resources/comet-2.jpg" alt="" />
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5>
+                                                                        <a href="#"
+                                                                           title="">alexendra dadrio</a>
+                                                                    </h5>
+                                                                    <span>1 month ago</span>
+                                                                    <a class="we-reply" href="#"
+                                                                       title="Reply">
+                                                                        <i class="fa fa-reply"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <p>
+                                                                    yes, really very awesome car i see the
+                                                                    features of this car in the official website
+                                                                    of <a href="#" title="">#Mercedes-Benz</a>
+                                                                    and really impressed :-)
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#" title="" class="showmore underline">
+                                                        more
+                                                        comments
+                                                    </a>
+                                                </li>
+                                                <li class="post-comment">
+                                                    <div class="comet-avatar">
+                                                        <img src="{{yourProfile.UserInfo[0].ImageBase}}" />
+                                                    </div>
+                                                    <div class="post-comt-box">
+                                                        <form method="post" id="frmPostComment{{yourProfile.UserInfo[0].AutoId}}">
+                                                            <textarea id="inputComment{{yourProfile.UserInfo[0].AutoId}}" placeholder="Viết bình luận..." ng-keypress="EnterPostComment($event,item)"></textarea>
+                                                            <div class="add-smiles">
+                                                                <span class="em em-smiley"
+                                                                      title="add icon"></span>
+                                                            </div>
+                                                            <div class="smiles-bunch">
+                                                                <i class="em em---1"></i>
+                                                                <i class="em em-smiley"></i>
+                                                                <i class="em em-anguished"></i>
+                                                                <i class="em em-laughing"></i>
+                                                                <i class="em em-angry"></i>
+                                                                <i class="em em-astonished"></i>
+                                                                <i class="em em-blush"></i>
+                                                                <i class="em em-disappointed"></i>
+                                                                <i class="em em-worried"></i>
+                                                                <i class="em em-kissing_heart"></i>
+                                                                <i class="em em-rage"></i>
+                                                                <i class="em em-stuck_out_tongue"></i>
+                                                            </div>
+                                                            <button style="margin-bottom:10px;" ng-click="PostComment(item)">
+                                                                <svg width="20px" height="20px" viewBox="0 0 512 512" enable-background="new 0 0 512 512"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="302.017" x2="302.017" y1="511.999" y2=".001"><stop offset="0" stop-color="#5558ff" /><stop offset="1" stop-color="#00c0ff" /></linearGradient><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="196" x2="196" y1="331.001" y2="181.001"><stop offset="0" stop-color="#addcff" /><stop offset=".5028" stop-color="#eaf6ff" /><stop offset="1" stop-color="#eaf6ff" /></linearGradient><g><g><g><path d="m504.8 243.101-390-240.958c-5.4-3.3-12.301-2.701-17.401 1.199-4.799 4.2-6.599 11.1-4.499 17.1l82.5 220.558 126.599 15-126.599 15-82.5 220.6c-2.1 6-.3 12.9 4.499 17.1 5.005 3.892 12.278 4.399 17.401 1.199l390-241c4.499-2.999 7.2-7.8 7.2-12.9 0-5.097-2.701-9.898-7.2-12.898z" fill="url(#SVGID_1_)" /></g></g><g><g><path d="m377 241.001h-201.599l5.698 15-5.698 15h201.599c8.401 0 15-6.599 15-15s-6.599-15-15-15zm-270 0h-92c-8.291 0-15 6.709-15 15s6.709 15 15 15h92c8.291 0 15-6.709 15-15s-6.709-15-15-15zm-30 60h-62c-8.291 0-15 6.709-15 15s6.709 15 15 15h62c8.291 0 15-6.709 15-15s-6.709-15-15-15zm-62-90h62c8.291 0 15-6.709 15-15s-6.709-15-15-15h-62c-8.291 0-15 6.709-15 15s6.709 15 15 15z" fill="url(#SVGID_2_)" /></g></g></g></svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <aside class="sidebar static">
+                                    <div class="widget">
+                                        <h4 class="widget-title">Trang của bạn</h4>
+                                        <div class="your-page">
+                                            <figure>
+                                                <a title="" href="#">
+                                                    <img src="{{profileInfo.ImageBase}}" alt=""/>
+                                                </a>
+                                            </figure>
+                                            <div class="page-meta">
+                                                <a class="underline">{{profileInfo.FirstName}} {{profileInfo.MiddleName}} {{profileInfo.LastName}}</a>
+                                                <span><i class="ti-comment"></i>Tin nhắn <em>0</em></span>
+                                                <span><i class="ti-bell"></i>Thông báo <em>0</em></span>
+                                            </div>
+                                            <div class="page-likes mt-3" style="color:white;text-align:center;">
+                                                <a href="#"
+                                                   class="btn btn-success">Tổng số lượt thích</a>
+
+                                                <div class="tab-content mt-2">
+                                                    <div class="tab-pane active fade show">
+                                                        <span style="color:red"><i class="fa fa-heart"></i>{{totalHeart}}</span>
+                                                        <a title="weekly-likes" href="#">0 lượt thích trong một tuần</a>
+
+                                                        @* ds bạn bè *@
+                                                        <div class="users-thumb-list">
+                                                            <a data-toggle="tooltip" title="" ng-repeat="people in listPeople">
+                                                                <img src="{{people.ImageBase}}" alt="" style="height:36px;width:36px;"/>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget stick-widget">
+                                        <h4 class="widget-title">Bạn có thể theo dõi</h4>
+                                        <ul class="followers">
+                                            <li ng-repeat="person in listPeople">
+                                                <figure>
+                                                    <img src="{{person.ImageBase}}" alt="" />
+                                                </figure>
+                                                <div class="friend-meta">
+                                                    <h4><a href="" title="">{{person.FirstName}} {{person.MiddleName}} {{person.LastName}}</a></h4>
+                                                    <a href="#" title="" class="underline">Thêm bạn</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

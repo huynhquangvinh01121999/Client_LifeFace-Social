@@ -212,16 +212,11 @@
                         </div>
                     </li>
                 </ul>
-
-                @*<script src="~/js/angulars/Pages/commonController.js"></script>*@
-                <div class="user-img" style="margin-right:20px;" ng-controller="HomeController">
+                <div class="user-img" style="margin-right:20px;" ng-controller="CommonController">
                     <img src="{{userInfo.ImageBase}}" alt="" style="width:60px;height:60px">
-                    @*<span class="status f-online"></span>*@
                     <span>{{userInfo.LastName}}</span>
                     <div class="user-setting">
-                        <a href="#" title=""><i class="ti-user"></i>Trang cá nhân</a>
-                        @*<a href="#" title=""><i class="ti-pencil-alt"></i>Chỉnh sửa cá nhân</a>
-                            <a href="#" title=""><i class="ti-target"></i>Họat động</a>*@
+                        <a href="/Profile" title=""><i class="ti-user"></i>Trang cá nhân</a>
                         <a href="#" title=""><i class="ti-settings"></i>Cài đặt</a>
                         <a href="#" ng-click="logout()" title=""><i class="ti-power-off"></i>Đăng xuất</a>
                     </div>
@@ -237,7 +232,7 @@
                         <div class="widget">
                             <div class="foot-logo">
                                 <div class="logo">
-                                    <a href="index-2.html" title=""><img src="images/logo_lifeface.png" alt=""></a>
+                                    <a href="index-2.html" title=""><img src="~/images/logo_lifeface.png" alt=""></a>
                                 </div>
                                 <p>
                                     Tôi làm ra một ứng dụng mạng xã hội này với mục đích phục vụ nhu cầu giải trí cho mọi người trong thời buổi hiện đại ngày nay
@@ -262,15 +257,15 @@
                             </div>
                             <ul class="list-style">
                                 <li>
-                                    <i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/"
+                                    <i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com"
                                                                              title="">facebook</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en"
+                                    <i class="fa fa-instagram"></i><a href="https://www.instagram.com"
                                                                       title="">instagram</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover"
+                                    <i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com"
                                                                                 title="">Google+</a>
                                 </li>
                             </ul>
@@ -282,9 +277,9 @@
                                 <h4>Điều hướng</h4>
                             </div>
                             <ul class="list-style">
-                                <li><a href="about.html" title="">Về chúng tôi</a></li>
-                                <li><a href="contact.html" title="">Liên hệ</a></li>
-                                <li><a href="terms.html" title="">Điều khoản và điều kiện</a></li>
+                                <li><a href="" title="">Về chúng tôi</a></li>
+                                <li><a href="" title="">Liên hệ</a></li>
+                                <li><a href="" title="">Điều khoản và điều kiện</a></li>
                             </ul>
                         </div>
                     </div>
@@ -343,19 +338,19 @@
     <marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
 </body>
 </html>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
-    var myVar = setInterval(function () { myTimer() }, 0);
-    function myTimer() {
-        var d = new Date();
-        var t = d.toLocaleTimeString();
-        $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
-        $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
-        $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
-        $("div[onmouseover='S_ssac();']").remove();
-        $("a[href='http://somee.com']").parent().remove();
-        $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
-        $("#dp_swf_engine").remove();
-        $("#TT_Frame").remove();
-    }
-</script>
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        var myVar = setInterval(function () { myTimer() }, 0);
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
+            $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
+            $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
+            $("div[onmouseover='S_ssac();']").remove();
+            $("a[href='http://somee.com']").parent().remove();
+            $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
+            $("#dp_swf_engine").remove();
+            $("#TT_Frame").remove();
+        }
+    </script>*@

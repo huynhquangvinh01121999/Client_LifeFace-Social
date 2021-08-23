@@ -6,14 +6,14 @@
     <img class="mb-4" src="~/images/logo_lifeface_login.png" alt="">
     <h1 class="h3 mb-3 font-weight-normal">Đăng nhập</h1>
     <label for="inputEmail" class="sr-only">Tên đăng nhập</label>
-    <input type="text" id="inputUserName" class="form-control" placeholder="Tên đăng nhập" required autofocus>
+    <input type="text" id="inputUserName" class="form-control" placeholder="Tên đăng nhập" required autofocus ng-keypress="EnterLogin($event)">
     <label for="inputPassword" class="sr-only">Mật khẩu</label>
-    <input type="password" id="inputPassWord" class="form-control mt-2" placeholder="Mật khẩu" required>
-    <div class="checkbox mb-3" style="text-align:right;">
-        <label>
-            <input type="checkbox" value="remember-me"> Nhớ mật khẩu
-        </label>
-    </div>
+    <input type="password" id="inputPassWord" class="form-control mt-2" placeholder="Mật khẩu" required ng-keypress="EnterLogin($event)">
+    @*<div class="checkbox mb-3" style="text-align:right;">
+            <label>
+                <input type="checkbox" value="remember-me"> Nhớ mật khẩu
+            </label>
+        </div>*@
     <a class="btn btn-lg btn-success btn-block mt-2" ng-click="login()">Đăng nhập</a>
     <a class="btn btn-lg btn-primary btn-block mt-2" asp-action="Index" asp-controller="Register">Đăng ký</a>
     <p class="mt-5 mb-3 text-muted">&copy; 2021 Design by Huynh Quang Vinh</p>

@@ -2,6 +2,7 @@
     ViewData["Title"] = "Life Face";
 }
 <script src="~/js/angulars/Pages/HomeController.js"></script>
+<script src="~/js/angulars/Pages/commonController.js"></script>
 @*<script src="~/js/angulars/Handles/PostHandle.js"></script>*@
 <link rel="stylesheet" href="~/css/loader.css">
 
@@ -120,7 +121,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div><!-- add post new box -->
+                            </div>
                             <div class="loadMore">
                                 <div class="central-meta item" ng-repeat="item in listPost">
                                     <div class="user-post">
@@ -190,40 +191,6 @@
                                                             {{comment.Content}}
                                                         </p>
                                                     </div>
-                                                    @*<ul>
-                                                            <li>
-                                                                <div class="comet-avatar">
-                                                                    <img src="images/resources/comet-2.jpg" alt="">
-                                                                </div>
-                                                                <div class="we-comment">
-                                                                    <div class="coment-head">
-                                                                        <h5>
-                                                                            <a href="#"
-                                                                               title="">alexendra dadrio</a>
-                                                                        </h5>
-                                                                        <span>1 month ago</span>
-                                                                        <a class="we-reply" href="#"
-                                                                           title="Reply">
-                                                                            <i class="fa fa-reply"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                    <p>
-                                                                        yes, really very awesome car i see the
-                                                                        features of this car in the official website
-                                                                        of <a href="#" title="">#Mercedes-Benz</a>
-                                                                        and really impressed :-)
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                        </ul>*@
-                                                </li>
-                                                @* Load more comment *@
-                                                @*<li>
-                                                        <a href="#" title="" class="showmore underline">
-                                                            more
-                                                            comments
-                                                        </a>
-                                                    </li>*@
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
                                                         <img src="{{userInfo.ImageBase}}" alt="">

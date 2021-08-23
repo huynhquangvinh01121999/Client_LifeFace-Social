@@ -4,7 +4,7 @@ function LoginController($scope, $http, $timeout, $interval, $window) {
         location.href = "/Home";
     } else {
         toastr.options.preventDuplicates = true;
-        $scope.login = function () {
+        function HandleLogin() {
             var userName = $("#inputUserName").val();
             var passWord = $("#inputPassWord").val();
 
@@ -32,6 +32,16 @@ function LoginController($scope, $http, $timeout, $interval, $window) {
             }, function (error) {
                 toastr.error(`Hệ thống hiện đang lỗi ${error}`, 'Lỗi hệ thống', { timeOut: 3000 });
             })
+        }
+
+        $scope.login = function () {
+            HandleLogin();
+        }
+
+        $scope.EnterLogin = (keyEvent) => {
+            if (keyEvent.which === 13) {
+                HandleLogin();
+            }
         }
     }
 }

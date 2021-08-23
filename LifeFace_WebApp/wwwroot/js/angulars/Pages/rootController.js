@@ -1,5 +1,5 @@
-﻿const BASE_URL = "https://lifeface-social-api.herokuapp.com";
-//const BASE_URL = "http://localhost:3000";
+﻿//const BASE_URL = "https://lifeface-social-api.herokuapp.com";
+const BASE_URL = "http://localhost:3000";
 async function GetAsync($http, Url, Data) {
     return await $http({
         url: BASE_URL + Url,
