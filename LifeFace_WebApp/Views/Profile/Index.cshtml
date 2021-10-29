@@ -5,7 +5,11 @@
 <script src="~/js/angulars/Pages/ProfileController.js"></script>
 <script src="~/js/angulars/Pages/commonController.js"></script>
 <link rel="stylesheet" href="~/css/loader.css">
-
+<style>
+    .avatar_profile {
+        height: 150px;
+    }
+</style>
 <div ng-controller="ProfileController" ng-init="LoadList()">
     <section>
         <div class="feature-photo">
@@ -19,26 +23,26 @@
                 <i class="fa fa-camera-retro"></i>
                 <label class="fileContainer">
                     Đổi ảnh nền
-                    <input type="file" />
+                    <input type="file" upload-background ng-model="backgroundName" onchange="angular.element(this).scope().uploadBackground()">
                 </label>
             </form>
             <div class="container-fluid">
                 <div class="row merged">
-                    <div class="col-lg-2 col-sm-3">
+                    <div class="row_user_avatar">
                         <div class="user-avatar">
                             <figure>
-                                <img src="{{profileInfo.ImageBase}}" alt="Chưa có ảnh đại diện" style="height:190px" />
+                                <img src="{{profileInfo.ImageBase}}" alt="Chưa có ảnh đại diện" class="avatar_profile" />
                                 <form class="edit-phto">
                                     <i class="fa fa-camera-retro"></i>
                                     <label class="fileContainer">
                                         Đổi ảnh đại diện
-                                        <input type="file" />
+                                        <input type="file" upload-avatar ng-model="avatarName" onchange="angular.element(this).scope().uploadAvatar()">
                                     </label>
                                 </form>
                             </figure>
                         </div>
                     </div>
-                    <div class="col-lg-10 col-sm-9">
+                    <div class="col-lg-12 col-sm-12">
                         <div class="timeline-info">
                             <ul>
                                 <li class="admin-name">
@@ -121,7 +125,7 @@
                                                 <div ng-repeat="image in item.ListImage">
                                                     <img src="{{image.ImageBase}}" alt="error" style="border-radius: 10px;margin-top: -5px;" />
                                                 </div>
-                                                @*<div class="we-video-info">
+                                                <div class="we-video-info">
                                                     <ul>
                                                         <li>
                                                             <span class="like" data-toggle="tooltip"
@@ -133,7 +137,7 @@
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip"
                                                                   title="Comments">
-                                                                <i class="fa fa-comments-o" style="cursor:pointer" ng-click="LoadCommentArea(item.AutoId)"></i>
+                                                                <i class="fa fa-comments-o" style="cursor:pointer" ng-click="LoadProfileCommentArea(item.AutoId)"></i>
                                                                 <ins>{{item.CommentCount}}</ins>
                                                             </span>
                                                         </li>
@@ -145,10 +149,10 @@
                                                             </span>
                                                         </li>
                                                     </ul>
-                                                </div>*@
+                                                </div>
                                             </div>
                                         </div>
-                                        @*<div class="coment-area" id="coment_area{{item.AutoId}}" style="display:none;">
+                                        <div class="coment-area" id="coment_area_profile{{item.AutoId}}" style="display:none;">
                                             <ul class="we-comet">
                                                 <li ng-repeat="comment in item.Comments">
                                                     <div class="comet-avatar">
@@ -170,47 +174,14 @@
                                                             {{comment.Content}}
                                                         </p>
                                                     </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="comet-avatar">
-                                                                <img src="images/resources/comet-2.jpg" alt="" />
-                                                            </div>
-                                                            <div class="we-comment">
-                                                                <div class="coment-head">
-                                                                    <h5>
-                                                                        <a href="#"
-                                                                           title="">alexendra dadrio</a>
-                                                                    </h5>
-                                                                    <span>1 month ago</span>
-                                                                    <a class="we-reply" href="#"
-                                                                       title="Reply">
-                                                                        <i class="fa fa-reply"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <p>
-                                                                    yes, really very awesome car i see the
-                                                                    features of this car in the official website
-                                                                    of <a href="#" title="">#Mercedes-Benz</a>
-                                                                    and really impressed :-)
-                                                                </p>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" title="" class="showmore underline">
-                                                        more
-                                                        comments
-                                                    </a>
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="{{yourProfile.UserInfo[0].ImageBase}}" />
+                                                        <img src="{{profileInfo.ImageBase}}" />
                                                     </div>
                                                     <div class="post-comt-box">
-                                                        <form method="post" id="frmPostComment{{yourProfile.UserInfo[0].AutoId}}">
-                                                            <textarea id="inputComment{{yourProfile.UserInfo[0].AutoId}}" placeholder="Viết bình luận..." ng-keypress="EnterPostComment($event,item)"></textarea>
+                                                        <form method="post" id="frmPostComment{{item.AutoId}}">
+                                                            <textarea id="inputComment{{item.AutoId}}" placeholder="Viết bình luận..." ng-keypress="EnterPostComment($event,item)"></textarea>
                                                             <div class="add-smiles">
                                                                 <span class="em em-smiley"
                                                                       title="add icon"></span>
@@ -236,7 +207,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>*@
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +218,7 @@
                                         <div class="your-page">
                                             <figure>
                                                 <a title="" href="#">
-                                                    <img src="{{profileInfo.ImageBase}}" alt=""/>
+                                                    <img src="{{profileInfo.ImageBase}}" alt="" />
                                                 </a>
                                             </figure>
                                             <div class="page-meta">
@@ -267,7 +238,7 @@
                                                         @* ds bạn bè *@
                                                         <div class="users-thumb-list">
                                                             <a data-toggle="tooltip" title="" ng-repeat="people in listPeople">
-                                                                <img src="{{people.ImageBase}}" alt="" style="height:36px;width:36px;"/>
+                                                                <img src="{{people.ImageBase}}" alt="" style="height:36px;width:36px;" />
                                                             </a>
                                                         </div>
                                                     </div>

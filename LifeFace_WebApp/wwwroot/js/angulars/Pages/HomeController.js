@@ -143,24 +143,26 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
             PostAsync($http, "/createPost", newPost).then(function (res) {
                 toastr.success('Bài viết đã được đăng lên dòng thời gian', '', { timeOut: 3000 });
                 //console.log(res.data);
-                location.reload();
+                //location.reload();
                 document.getElementById("frmNewPost").reset();
-                $("#loader").hide()
+                $("#loader").hide();
             }, function (error) {
             })
+
+            // call socket
+            client.emit('createNewPost', $scope.userInfo.FirstName + " " + $scope.userInfo.MiddleName + " " + $scope.userInfo.LastName);
         }
 
         // load them data khi scroll tới vùng quy định
-        var scrollHeight = 4400;
+        var scrollHeight = 3000;
         $window.onscroll = async function () {
             //console.log($(document).scrollTop() + "-" + scrollHeight);
             if ($(document).scrollTop() >= scrollHeight) {
                 $("#loader").show();
                 //console.log($(document).scrollTop() + "-" + scrollHeight);
-                scrollHeight += 4400;
+                scrollHeight += 3000;
 
                 await GetAsync($http, "?offSet=" + offSet, []).then(function (res) {
-                    $("#loader").show();
                     $scope.listTemp = res.data.ReturnData;
 
                     $scope.listTemp.map(data => $scope.listPost.push(data));
@@ -179,6 +181,24 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
                 }, function (err) {
                     console.log("error");
                 });
+
+                await GetAsync($http, "/getPostHeart_By_AutoPostId?userName=" + $scope.decodeToken.username, []).then(async function (res) {
+                    $scope.listPostHeartOfUserId = await res.data;
+                    //console.log($scope.listPostHeartOfUserId);
+                }, function (err) {
+                    console.log("error");
+                });
+
+                $scope.listPostHeartOfUserId.map((postHeart) => {
+                    $scope.listPost.map((post) => {
+                        if (post.AutoId === postHeart.AutoPostId) {
+                            $("#heart_" + post.AutoId).removeClass("ti-heart");
+                            $("#heart_" + post.AutoId).removeClass("fa fa-heart");
+                            $("#heart_" + post.AutoId).addClass("fa fa-heart");
+                            $(".fa-heart").css("color", "red");
+                        }
+                    })
+                })
                 $("#loader").hide();
             }
         };
@@ -303,6 +323,16 @@ function HomeController($scope, $http, $timeout, $interval, $window) {
         $scope.PostComment = (post) => {
             SendComment(post);
         }
+
+        setTimeout(() => {
+            client.emit('notifiOnline', $scope.userInfo.FirstName + " " + $scope.userInfo.MiddleName + " " + $scope.userInfo.LastName);
+            client.on('reSentNotifiOnline', (data) => {
+                toastr.success(data, '', { timeOut: 3000 });
+            })
+        }, 3000);
+        client.on('reSentCreatePost', (data) => {
+            toastr.success(data, '', { timeOut: 3000 });
+        })
     }
 }
 

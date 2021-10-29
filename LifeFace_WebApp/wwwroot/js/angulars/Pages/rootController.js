@@ -1,5 +1,6 @@
 ﻿//const BASE_URL = "https://lifeface-social-api.herokuapp.com";
 const BASE_URL = "http://localhost:3000";
+var client = io(BASE_URL, { transports: ['websocket'] });
 async function GetAsync($http, Url, Data) {
     return await $http({
         url: BASE_URL + Url,
